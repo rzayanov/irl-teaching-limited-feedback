@@ -72,7 +72,7 @@ EPS_ROUND = get_eps_round()
 
 
 # use the same environment layout for all seeds
-USE_SAME_ENV = getboolean('USE_SAME_ENV')  # False
+USE_SAME_ENV = getboolean('USE_SAME_ENV')
 
 
 # === TEACHING ALGORITHMS
@@ -107,7 +107,7 @@ TEACH_RANDOM = getboolean('TEACH_RANDOM')
 
 
 # === ENVIRONMENT
-GAMMA = getfloat('GAMMA')  # .99
+GAMMA = getfloat('GAMMA')
 # number of different driving tasks
 N_TASKS = getint('N_TASKS')
 # number of tasks that the learner already knows
@@ -123,21 +123,21 @@ USE_OW = getboolean('USE_OW')
 # === RHO CALCULATION
 # calculate rho by sampling
 RHO_STATE_SAMPLING = getboolean('RHO_STATE_SAMPLING')
-SAMPLING_N_TRAJ = getint('SAMPLING_N_TRAJ')  # 10
+SAMPLING_N_TRAJ = getint('SAMPLING_N_TRAJ')
 # the length of each trajectory
 # (out of place -- it's used in curriculum teaching and in sampling rho from state)
-TRAJ_LEN = getint('TRAJ_LEN')  # 10
+TRAJ_LEN = getint('TRAJ_LEN')
 # calculate rho by using Bellman equations
 RHO_STATE_BELLMAN = getboolean('RHO_STATE_BELLMAN')
 
 
 # === LEARNER
 # learner uses cross entropy
-CROSS_ENT = getboolean('CROSS_ENT')  # False
+CROSS_ENT = getboolean('CROSS_ENT')
 # learner starts with random weights
 LEARNER_RANDOM_W = getboolean('LEARNER_RANDOM_W')
 # the limit of the random initial weights
-LEARNER_RANDOM_W_MAX = getfloat('LEARNER_RANDOM_W_MAX')  # 0, or RWL1N / w_count * 2
+LEARNER_RANDOM_W_MAX = getfloat('LEARNER_RANDOM_W_MAX')
 # in MCMC, the initial radius of the sphere to sample from
 # (out of place -- this relates mostly to MCMC)
 RANDOM_W_L1_NORM = getfloat('RANDOM_W_L1_NORM')
@@ -150,7 +150,7 @@ ETA_MUL = getfloat('ETA_MUL')
 
 # === OBJECT WORLD ENVIRONMENT
 OW_GRID_SZ = getint('OW_GRID_SZ')
-OW_WIND = getfloat('OW_WIND')  # .3
+OW_WIND = getfloat('OW_WIND')
 OW_GRID_OBJS = getint('OW_GRID_OBJS')
 OW_MANUAL_FEATURES = getint('OW_MANUAL_FEATURES')
 # one cell can have at most one non-zero feature
@@ -162,15 +162,15 @@ R_LOW = getint('R_LOW')
 
 # === TEACHER
 # compute the optimal learner weights and assume that the real learner has the opposite weights
-PESSIMISTIC_INITIAL = getboolean('PESSIMISTIC_INITIAL')  # True
+PESSIMISTIC_INITIAL = getboolean('PESSIMISTIC_INITIAL')
 # number of teacher's MCE iterations
-TEACHER_MCE_ITERS = getint('TEACHER_MCE_ITERS')  # 0
+TEACHER_MCE_ITERS = getint('TEACHER_MCE_ITERS')
 # how many previous exams to consider in MCE
-TEACHER_MCE_EASING = getint('TEACHER_MCE_EASING')  # 0 or MCMC_EASING
-TEACHER_MCE_ETA_MUL = getfloat('TEACHER_MCE_ETA_MUL')  # 1
-TEACHER_MCE_ETA_SCALE = getboolean('TEACHER_MCE_ETA_SCALE')  # False
+TEACHER_MCE_EASING = getint('TEACHER_MCE_EASING')
+TEACHER_MCE_ETA_MUL = getfloat('TEACHER_MCE_ETA_MUL')
+TEACHER_MCE_ETA_SCALE = getboolean('TEACHER_MCE_ETA_SCALE')
 # if >0, each demonstration entry contains a state and the teacher's policy distribution from that state
-LONG_DEMOS = getboolean('LONG_DEMOS')  # True
+LONG_DEMOS = getboolean('LONG_DEMOS')
 
 
 # === MCMC
@@ -178,41 +178,41 @@ LONG_DEMOS = getboolean('LONG_DEMOS')  # True
 # - learner: use the norm of the true learner weights (the most knowledgable)
 # - inferred: use the norm of the estimated learner weight
 # - const: use a constant
-BIRL_NORM_MODE = getstr('BIRL_NORM_MODE')  # 'inferred'
+BIRL_NORM_MODE = getstr('BIRL_NORM_MODE')
 # number of samples to use
-MCMC_CHAIN_LENGTH = getint('MCMC_CHAIN_LENGTH')  # 1000
+MCMC_CHAIN_LENGTH = getint('MCMC_CHAIN_LENGTH')
 # number of samples to skip between two used samples
-MCMC_CHAIN_SKIP = getint('MCMC_CHAIN_SKIP')  # 10
+MCMC_CHAIN_SKIP = getint('MCMC_CHAIN_SKIP')
 # how many times to initialize the chain
-MCMC_N_INITS = getint('MCMC_N_INITS')  # 10
+MCMC_N_INITS = getint('MCMC_N_INITS')
 # how many initial samples to skip
-MCMC_BURN_IN = getint('MCMC_BURN_IN')  # 0
+MCMC_BURN_IN = getint('MCMC_BURN_IN')
 # start the chain from the previous maximum aposteriori sample
-MCMC_REUSE_MAP = getboolean('MCMC_REUSE_MAP')  # False
+MCMC_REUSE_MAP = getboolean('MCMC_REUSE_MAP')
 # the step of the grid walk
-R_STEP_SIZE = getfloat('R_STEP_SIZE')  # 0.05
+R_STEP_SIZE = getfloat('R_STEP_SIZE')
 # number of steps between each sample
-R_STEP_COUNT = getint('R_STEP_COUNT')  # 5
+R_STEP_COUNT = getint('R_STEP_COUNT')
 # if >0, each exam entry contains a state and the learner's policy distribution from that state (used for debugging)
-LONG_EXAM_SZ = getint('LONG_EXAM_SZ')  # 3
+LONG_EXAM_SZ = getint('LONG_EXAM_SZ')
 # how many exams to add per teaching iteration
-EXAMS_PER_ITER = getint('EXAMS_PER_ITER')  # 1
+EXAMS_PER_ITER = getint('EXAMS_PER_ITER')
 # one exam is just one action or a trajectory
-EXAM_AS_TRAJ = getboolean('EXAM_AS_TRAJ')  # False
+EXAM_AS_TRAJ = getboolean('EXAM_AS_TRAJ')
 # how many times a teacher can request any given initial state
-EXAM_REUSE_COUNT = getint('EXAM_REUSE_COUNT')  # 1
+EXAM_REUSE_COUNT = getint('EXAM_REUSE_COUNT')
 # teacher maintains the full model of the learner
-MCMC_USE_DEMOS = getboolean('MCMC_USE_DEMOS')  # False
+MCMC_USE_DEMOS = getboolean('MCMC_USE_DEMOS')
 # how many previous exams to consider
-MCMC_EASING = getint('MCMC_EASING')  # 0
+MCMC_EASING = getint('MCMC_EASING')
 # multiplier for the previous exams
-MCMC_EASING_MUL = getfloat('MCMC_EASING_MUL')  # 1
+MCMC_EASING_MUL = getfloat('MCMC_EASING_MUL')
 # assume that the learner uses MCE
-MCMC_SOFT_Q = getboolean('MCMC_SOFT_Q')  # True
+MCMC_SOFT_Q = getboolean('MCMC_SOFT_Q')
 # consider the whole chain when choosing the demonstration
-TEACH_WITH_CHAIN = getboolean('TEACH_WITH_CHAIN')  # False
+TEACH_WITH_CHAIN = getboolean('TEACH_WITH_CHAIN')
 # use soft value when computing EVD
-SOFT_EVD = getboolean('SOFT_EVD')  # False
+SOFT_EVD = getboolean('SOFT_EVD')
 
 
 # === EXPERIMENTAL FEATURES
