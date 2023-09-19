@@ -3,9 +3,9 @@
 
 This project contains code for the following paper:
 
-_TODO\
+_Rustam Zayanov, Francisco S. Melo, and Manuel Lopes\
 "Interactively Teaching an Inverse Reinforcement Learner with Limited Feedback"\
-TODO_
+ArXiv e-print, [arXiv:2309.09095](https://arxiv.org/abs/2309.09095v1), (2023)_
 
 Our source code is based on the code of the following publication:
 
